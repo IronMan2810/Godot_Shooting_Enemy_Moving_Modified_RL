@@ -1,0 +1,323 @@
+[gd_scene load_steps=25 format=3 uid="uid://ctahsvj88g1om"]
+
+[ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
+[ext_resource type="Script" path="res://game.gd" id="1_f4vyw"]
+[ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="1_ujgwk"]
+[ext_resource type="PackedScene" uid="uid://0epshwdldf8x" path="res://Scenes/FixedCamera/camera_3d.tscn" id="1_wutnl"]
+[ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="4_bvpcs"]
+[ext_resource type="Texture2D" uid="uid://bwm3chclmoo0x" path="res://addons/devblocks/textures/dark/texture_01.png" id="6_dwidf"]
+[ext_resource type="Texture2D" uid="uid://cp16p7sq8s85t" path="res://crosshair.png" id="6_qbl5f"]
+[ext_resource type="Texture2D" uid="uid://ddet205grk1co" path="res://addons/devblocks/textures/light/texture_01.png" id="7_2pfpt"]
+[ext_resource type="Script" path="res://Scenes/reward.gd" id="7_n8wxf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6g5uc"]
+
+[sub_resource type="Sky" id="Sky_ivwug"]
+sky_material = SubResource("ProceduralSkyMaterial_6g5uc")
+
+[sub_resource type="Environment" id="Environment_l5pxq"]
+background_mode = 2
+background_color = Color(0.2139, 0.570975, 0.69, 1)
+sky = SubResource("Sky_ivwug")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qxf55"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkuq5"]
+albedo_texture = ExtResource("7_2pfpt")
+uv1_scale = Vector3(4, 0.04, 4)
+uv1_offset = Vector3(1, 1, 1)
+uv1_triplanar = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x6x0e"]
+points = PackedVector3Array(-0.214183, -0.948028, -0.451129, 0.0227317, 0.952146, 0.498887, 0.171488, 0.951995, 0.469018, -0.125934, 0.952684, -0.483291, 0.499663, -0.953674, -0.00688883, -0.387646, -0.93796, 0.315653, -0.483292, 0.952686, -0.12593, 0.375097, 0.940128, -0.329816, 0.171488, -0.951995, 0.469018, 0.140783, -0.945485, -0.479579, 0.469014, 0.952011, 0.171499, -0.387646, 0.93796, 0.315653, -0.483292, -0.952686, -0.12593, -0.183511, -0.943076, 0.464698, 0.407412, -0.946994, 0.288983, 0.375097, -0.940128, -0.329816, -0.395154, 0.955761, -0.305523, -0.479555, 0.945437, 0.14088, 0.464698, 0.943099, -0.183512, 0.140783, 0.945485, -0.479579, -0.243203, 0.945955, 0.436491, -0.479555, -0.945437, 0.14088, 0.288971, 0.946988, 0.407421, -0.395154, -0.955761, -0.305523, -0.0069906, -0.953641, 0.499658, 0.499663, 0.953674, -0.00688883, -0.271948, 0.943071, -0.419217, 0.464698, -0.943099, -0.183512, -0.125934, -0.952684, -0.483291, 0.315648, 0.937973, -0.387651, 0.469014, -0.952011, 0.171499, 0.407412, 0.946994, 0.288983)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4sbt"]
+albedo_texture = ExtResource("6_dwidf")
+uv1_scale = Vector3(3.3, 0.033, 3.3)
+uv1_offset = Vector3(0.5, 1, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkf8n"]
+albedo_texture = ExtResource("7_2pfpt")
+uv1_scale = Vector3(2.5, 0.025, 2.5)
+uv1_offset = Vector3(0.75, 1, 0.75)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22dk4"]
+albedo_texture = ExtResource("6_dwidf")
+uv1_scale = Vector3(2, 0.02, 2)
+uv1_offset = Vector3(1, 1, 1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm5qa"]
+albedo_texture = ExtResource("7_2pfpt")
+uv1_scale = Vector3(1.5, 0.015, 1.5)
+uv1_offset = Vector3(0.25, 1, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jc45"]
+albedo_texture = ExtResource("6_dwidf")
+uv1_scale = Vector3(1.2, 0.012, 1.2)
+uv1_offset = Vector3(0.5, 1, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lcwu"]
+albedo_texture = ExtResource("7_2pfpt")
+uv1_scale = Vector3(0.9, 0.009, 0.9)
+uv1_offset = Vector3(0.75, 1, 0.75)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypu2m"]
+albedo_texture = ExtResource("6_dwidf")
+uv1_scale = Vector3(0.7, 0.007, 0.7)
+uv1_offset = Vector3(0.75, 1, 0.75)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_baevv"]
+albedo_texture = ExtResource("7_2pfpt")
+uv1_scale = Vector3(0.45, 0.005, 0.45)
+uv1_offset = Vector3(1, 1, 1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1tfv"]
+albedo_texture = ExtResource("6_dwidf")
+uv1_scale = Vector3(0.25, 0.003, 0.25)
+uv1_offset = Vector3(1, 1, 1)
+uv1_triplanar = true
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_f4vyw")
+
+[node name="upperCamera" parent="." instance=ExtResource("1_wutnl")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l5pxq")
+
+[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.966349, 0.250904, -0.0567091, 0.182362, -0.512743, 0.838951, 0.181419, -0.821061, -0.541244, -0.00693703, 59.5145, -109.348)
+light_energy = 1.232
+light_indirect_energy = 0.884
+light_volumetric_fog_energy = 0.768
+shadow_enabled = true
+
+[node name="Floor" parent="." instance=ExtResource("1_ujgwk")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="agent1" type="Node3D" parent="."]
+transform = Transform3D(0.92321, 0, 0.384295, 0, 1, 0, -0.384295, 0, 0.92321, -17, 1.619, 0)
+
+[node name="Player" parent="agent1" instance=ExtResource("1_eisjc")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0)
+
+[node name="Epoch" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_bottom = 26.0
+grow_horizontal = 0
+text = "Epoch: 0"
+
+[node name="Timer" type="Label" parent="."]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Time Left: 20"
+
+[node name="CrossHair" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_qbl5f")
+
+[node name="Enemy" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+script = ExtResource("4_bvpcs")
+
+[node name="Reward1" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(1.74846e-07, -0.04, 6.03983e-07, -4, -1.74846e-09, 0, 2.64009e-14, -6.03983e-09, -4, 0.93, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+block_color_group = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward1"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_pkuq5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward1"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward1"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.45, 2, 0)
+text = "1
+"
+font_size = 15
+
+[node name="Reward2" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(1.44248e-07, -0.033, 4.98286e-07, -3.3, -1.44248e-09, 8.24587e-20, 2.17807e-14, -4.98286e-09, -3.3, 0.91, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward2"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_f4sbt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward2"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward2"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.44, 2, 0)
+text = "2
+"
+font_size = 15
+
+[node name="Reward3" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(1.09278e-07, -0.025, 3.77489e-07, -2.5, -1.09278e-09, 6.24687e-20, 1.65005e-14, -3.7749e-09, -2.5, 0.89, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+block_color_group = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward3"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_tkf8n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward3"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward3"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.45, 2, 0)
+text = "3"
+font_size = 15
+
+[node name="Reward4" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(8.74228e-08, -0.02, 3.01992e-07, -2, -8.74228e-10, 4.99749e-20, 1.32004e-14, -3.01992e-09, -2, 0.87, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward4"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_22dk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward4"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward4"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.44, 2, 0)
+text = "4
+"
+font_size = 19
+
+[node name="Reward5" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(6.55671e-08, -0.015, 2.26494e-07, -1.5, -6.55671e-10, 3.74812e-20, 9.90032e-15, -2.26494e-09, -1.5, 0.85, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+block_color_group = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward5"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_rm5qa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward5"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward5"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.45, 2, 0)
+text = "5
+"
+font_size = 21
+
+[node name="Reward6" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(5.24537e-08, -0.012, 1.81195e-07, -1.2, -5.24537e-10, 2.9985e-20, 7.92025e-15, -1.81195e-09, -1.2, 0.83, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward6"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_4jc45")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward6"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward6"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.44, 2, 0)
+text = "6
+"
+font_size = 23
+
+[node name="Reward7" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(3.93403e-08, -0.009, 1.35896e-07, -0.9, -3.93402e-10, 2.3124e-20, 5.94019e-15, -1.35896e-09, -0.9, 0.81, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+block_color_group = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward7"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_3lcwu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward7"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward7"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.45, 2, 0)
+text = "7
+"
+font_size = 25
+
+[node name="Reward8" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(3.0598e-08, -0.007, 1.05697e-07, -0.7, -3.0598e-10, 1.83147e-20, 4.62015e-15, -1.05697e-09, -0.7, 0.79, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward8"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_ypu2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward8"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward8"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.41, 2, 0)
+text = "8
+"
+font_size = 40
+
+[node name="Reward9" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(1.96701e-08, -0.005, 6.79481e-08, -0.45, -2.18557e-10, 1.2046e-20, 2.97009e-15, -7.54979e-10, -0.45, 0.77, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+block_color_group = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward9"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_baevv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward9"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward9"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.38, 2, 0)
+text = "9
+"
+font_size = 53
+
+[node name="Reward10" type="StaticBody3D" parent="Enemy"]
+transform = Transform3D(1.09278e-08, -0.003, 3.7749e-08, -0.25, -1.31134e-10, 6.80988e-21, 1.65005e-15, -4.52987e-10, -0.25, 0.75, 2.608, -0.101)
+script = ExtResource("7_n8wxf")
+
+[node name="Mesh" type="MeshInstance3D" parent="Enemy/Reward10"]
+mesh = SubResource("CylinderMesh_qxf55")
+surface_material_override/0 = SubResource("StandardMaterial3D_k1tfv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Reward10"]
+shape = SubResource("ConvexPolygonShape3D_x6x0e")
+
+[node name="R" type="Label3D" parent="Enemy/Reward10"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37115e-08, 1, -1, 4.37114e-08, 4.55191e-15, -0.05, 2, 0)
+text = "10"
+font_size = 100
